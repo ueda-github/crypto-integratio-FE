@@ -1,0 +1,33 @@
+<app-header></app-header>
+<b><h3 style="margin-left: 20px; text-align: center;">Information about symbols</h3></b>
+
+<table class="table table-striped table-responsive-md btn-table">
+    <thead>
+      <tr>
+        <th>Symbol Id</th>
+        <th>Exchange Id</th>
+        <th>Asset Base</th>
+        <th>Asset Quote</th>
+        <th>Asset Unit</th>
+        <th>Future contract unit</th>
+        <th>Price</th>
+        <th>Asset Base Exchange</th>
+        <th>Asset Quote Exchange</th>
+      </tr>
+      
+      <tr *ngFor="let symbol of formatedData">
+        <td> {{symbol.symbol_id}}</td>
+        <td> {{symbol.exchange_id}}</td>
+        <td> {{symbol.asset_id_base}}</td>
+        <td> {{symbol.asset_id_quote}}</td>
+        <td> {{symbol.asset_id_unit}}</td>
+        <td> {{symbol.future_contract_unit}}</td>
+        <td> {{symbol.price}}</td>
+        <td> {{symbol.asset_id_base_exchange}}</td>
+        <td> {{symbol.asset_id_quote_exchange}}</td>
+      </tr>
+    </thead>
+  </table>
+  <div class="footer m-t-40" style="background-color:#000026; height: 45px; text-align: center;">
+      <b><p style="color: white">Crypto currency - Reporting platform <br> Designed and developed by eAGASTRA</p></b>
+  </div>

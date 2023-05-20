@@ -1,0 +1,44 @@
+<body style="background-color: black; background-image: url('../assets/background_body.jpg');background-repeat: no-repeat; background-size:cover;">
+        <div class="container-fluid hv-100 d-flex align-items-center justify-content-center">
+                <div class="ml-50">
+                    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                        <div class="form-group">
+                            <input 
+                                type="text" 
+                                class="form-control width-115 height-40"
+                                name="Username" placeholder="Enter your username"
+                                ngModel required/> 
+                            <input 
+                                type="hidden" 
+                                class="form-control width-115 height-40"
+                                name="isNewUser" value="1"
+                                ngModel/>  </div>
+                        <div class="form-group">
+                            <input 
+                                type="password"  
+                                class="form-control width-115 height-40" 
+                                name="Password" minlength="8" id="password"
+                                placeholder="Your password (8 chars length)"
+                                ngModel required/>
+                        </div>
+                        <div class="form-group">
+                            <input 
+                                type="email" email=true
+                                class="form-control width-115 height-40"
+                                name="Email" placeholder="Email example@someone.com"
+                                ngModel required/>  </div>
+                        <div class="form-group">
+                            <input 
+                                type="text" 
+                                class="form-control width-115 height-40"
+                                name="PhoneNumber" placeholder="Enter your phone number"
+                                ngModel required/>  </div>
+                            <button 
+                                type="submit"
+                                class="btn gold-bg-color" 
+                                style="color: black" [disabled]="!f.valid"><b>Register</b>
+                        </button>
+                    </form>
+            </div>
+        </div>
+    </body>

@@ -1,0 +1,43 @@
+<app-header></app-header>
+
+<p style="margin-left: 550px"><b>Users and their unique CoinApi keys</b></p>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+<table class="table table-striped table-responsive-md btn-table">
+    <thead>
+      <tr>
+        <th>UserID</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Has an Api key?</th>
+        <th>Api key</th>
+        <th>is Admin</th>
+        <th>Action</th>
+      </tr>
+
+      <tr *ngFor="let user of users">
+        <td>{{user.userId}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+        <td>
+          <div *ngIf="user.api_key == null; else apiKey">No</div>
+        <ng-template #apiKey>Yes</ng-template>
+        </td>
+        <td>        
+          <input type="text" name="api_key" id="api_key" ngModel required placeholder="Type a new api key"/>
+        </td>
+        <td>   
+        <div *ngIf="user.isAdmin == 1; else elseBlock">Yes</div>
+        <ng-template #elseBlock>No</ng-template>
+      </td>
+      <td>
+        <button type="submit" style="margin-right: 10px;"  [disabled]="!f.valid"
+           (click)="getUserId(user.userId)"><img src="../../assets/editIcon.png" width="30px" height="30px"/></button> 
+        <a (click)="deleteUser(user.userId)"><img src="../../assets/deleteIcon.jpg"  width="30px" height="30px"/></a>
+    </td>
+   
+      </tr> 
+    </thead> 
+  </table>
+</form>
+<app-footer></app-footer>

@@ -1,0 +1,20 @@
+<app-header></app-header>
+
+<p style="margin-left: 20px">BTC (Bitcoin) is exchanging with <b>{{exchangeRates.rate}}  {{exchangeRates.asset_id_quote}} </b> at <b>{{exchangeTime}}</b></p>
+
+<table class="table table-striped table-responsive-md btn-table" id="tableStyle">
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>BTC Asset name</th>
+        <th>Rate</th>
+      </tr>
+
+      <tr *ngFor="let item of formatedData">
+        <td>{{item.time}}</td>
+        <td>{{item.asset}}</td>
+        <td>{{item.rate}} €</td>
+      </tr>
+    </thead>
+  </table>
+<app-footer></app-footer>

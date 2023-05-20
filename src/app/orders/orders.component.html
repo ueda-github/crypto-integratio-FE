@@ -1,0 +1,36 @@
+<app-header></app-header>
+
+<b><h3 style="margin-left: 20px; text-align: center;">Information about orders</h3></b>
+<div class="row">
+  <div class="column">
+<table class="table table-striped table-responsive-md btn-table" id="tableStyle">
+    <thead>
+      <tr>
+        <th style="text-align: center;">Time</th>
+        <th>Asks (Price | Size)</th>
+      </tr>
+
+      <tr *ngFor="let ask of asks">
+        <td style="text-align: center;">{{ask.time}}</td>
+        <td>{{ask.price}} | {{ask.size}}</td>
+      </tr>
+    </thead>
+  </table>
+  </div>
+  <div class="column">
+    <table class="table table-striped table-responsive-md btn-table">
+        <thead>
+          <tr>
+            <th style="text-align: center;">Symbol Id</th>
+            <th>Bids (Price | Size)</th>
+          </tr>
+    
+          <tr *ngFor="let bid of bids">
+            <td style="text-align: center;">{{bid.symbol}}</td>
+            <td>{{bid.price}} | {{bid.size}}</td>
+          </tr>
+        </thead>
+      </table>
+      </div>
+</div>
+<app-footer></app-footer>
