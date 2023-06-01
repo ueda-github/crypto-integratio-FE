@@ -6,7 +6,7 @@ Package Manager: npm 7.5.6
 
 How to setup the project locally
 
-- Clone the project git clone 
+- Clone the project git clone https://github.com/ueda-github/crypto-integration-FE.git
 - Install Node.js from this website https://nodejs.org/
 - Open a command prompt (Windows) or terminal (macOS or Linux) and navigate to the directory where the project is located.
 - Install project dependencies by running "npm install"
